@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V14</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form id="myform" target="_self" class="contact100-form validate-form" action="" onsubmit="">
+				<div class="contact100-form-title">
+					<div id="question"><span>Got a question</span></div><div id="logo"></div>
+
+				</div>
+
+				<label class="label-input100" for="first-name">Your Name *</label>
+				<div class="wrap-input100 rs1 validate-input">
+					<input id="first-name" class="input100" type="text" name="entry.701358052" placeholder="Your Name">
+					<span class="focus-input100"></span>
+				</div>
+			
+
+				<label class="label-input100" for="email">Email Address *</label>
+				<div class="wrap-input100 validate-input">
+					<input id="email" class="input100" type="text" name="entry.172758568" placeholder="Eg. example@email.com">
+					<span class="focus-input100"></span>
+				</div>
+
+				
+
+				<label class="label-input100" for="message">Question *</label>
+				<div class="wrap-input100 validate-input">
+					<textarea id="message" class="input100" name="entry.1561055336" placeholder="Please enter your question.."></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<button id="send" type="submit" class="contact100-form-btn">
+						<span>
+							Submit
+							<i class="zmdi zmdi-arrow-right m-l-8"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+<script>
+	function redirect(){
+		window.location.href='https://runnyweaselone.github.io/'
+	};
+	function postToGoogle(){
+    var q1= $('#first-name').val();
+    var q2= $('#email').val();
+    var q3= $('#message').val();
+    $.ajax({
+        url:"https://docs.google.com/forms/d/e/1FAIpQLSfrSedVzQk2ZvWTjrfa_db1NGOBIjFyQKrGL5FHdxxM5jeszQ/formResponse",
+        data:{"entry.701358052":q1,"entry.172758568":q2,"entry.1561055336":q3},
+        type:"POST",
+        dataType:"xml",
+        statusCode:{
+            0:function(){
+
+            },
+            200:function(){
+
+            }
+        }
+	});
+	redirect();
+}
+$(document).ready(function(){
+    $('#myform').submit(function(){
+        postToGoogle();
+        return false;
+    });
+});
+
+</script>
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script> -->
+
+</body>
+</html>
